@@ -1,1 +1,107 @@
-/*  your css code here. If applicable */
+ @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito:wght@400;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #fff5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 40px 30px;
+    }
+
+    h1 {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 2.6rem;
+      color: #222;
+      letter-spacing: 2px;
+    }
+
+    #setup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border: 2px solid #222;
+      border-radius: 16px;
+      padding: 30px 40px;
+      box-shadow: 6px 6px 0 #f4a;
+    }
+
+    #setup label { font-weight: 700; font-size: 1rem; color: #444; align-self: flex-start; }
+
+    #setup input[type="text"] {
+      width: 260px;
+      padding: 10px 14px;
+      border: 2px solid #222;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Nunito', sans-serif;
+      outline: none;
+      background: #fff5f7;
+      transition: border-color 0.2s;
+    }
+    #setup input[type="text"]:focus { border-color: #e05; }
+
+    #submit {
+      margin-top: 6px;
+      padding: 12px 36px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    #submit:hover { background: #e05; transform: translateY(-2px); }
+    #submit:active { transform: translateY(0); }
+
+    #game { display: none; flex-direction: column; align-items: center; gap: 16px; }
+
+    .message {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #444;
+      min-height: 28px;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 110px);
+      grid-template-rows: repeat(3, 110px);
+      border: 2px solid #222;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .cell {
+      width: 110px;
+      height: 110px;
+      background: #f9b8c8;
+      border: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 2.8rem;
+      color: #222;
+      cursor: pointer;
+      transition: background 0.15s;
+      user-select: none;
+    }
+    .cell:hover:not(.taken) { background: #f5a0b8; }
+    .cell.taken { cursor: default; }
+    .cell.winner { background: #7b1fa2; color: #fff; }
