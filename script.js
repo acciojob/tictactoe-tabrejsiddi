@@ -42,7 +42,7 @@
         const win = checkWin(mark);
         if (win) {
           win.forEach(i => document.getElementById(String(i)).classList.add('winner'));
-          message.textContent = `${players[current]}, congratulations you won!`;
+          message.textContent = `${players[current]} congratulations you won!`;
           over = true;
         } else if (Object.keys(board).length === 9) {
           message.textContent = "It's a draw!";
